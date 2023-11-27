@@ -1,0 +1,112 @@
+@import 'pagination';
+@import 'reset';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  // padding: 8px;
+  font-family: system-ui, sans-serif;
+  color: #fff;
+  background-color: #111;
+  // min-width: 100vw;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.table-wrapper {
+  border: 1px rgb(84, 84, 84) solid;
+  padding: 4px 8px;
+  background-color: #1f1f25;
+  width: calc(100vw - 1px);
+  // overflow-x: auto;
+}
+
+@mixin table-border($width: 1px, $padding: 2px 4px) {
+  border: #fff $width solid;
+  border-collapse: collapse;
+  padding: $padding;
+}
+
+.table {
+  margin-top: 4px;
+  @include table-border(0px);
+
+  * {
+    @include table-border(1px);
+    white-space: nowrap;
+  }
+}
+
+.table__header {
+  border: none;
+  display: flex;
+  gap: 4px;
+}
+
+.sorting-icon {
+  cursor: pointer;
+  font-weight: 800;
+  position: relative;
+  padding: 0 8px;
+
+  user-select: none;
+  background-color: #333;
+  border: none;
+  // border-bottom: 1px #FFF solid;
+}
+
+.btn {
+  cursor: pointer;
+  user-select: none;
+  padding: 2px 8px;
+  border: none;
+  background-color: #fff;
+}
+
+.btn[disabled] {
+  cursor: not-allowed;
+}
+
+.input-text {
+  padding: 4px 8px;
+  user-select: none;
+  border: none;
+
+  &:focus {
+    outline: 1px solid rgba(255, 255, 255, 0.5);
+  }
+}
+
+.x-scroll {
+  overflow-x: auto;
+}
+
+// custom scrollbar
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: darkgrey;
+}
+
+::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+// ---
+// styles for mobile gadgets
+
+/* CSS for devices up to 768 pixels wide (typical for many mobile devices) */
+@media only screen and (max-width: 768px) {
+  /* Your CSS styles for mobile devices go here */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  /* Additional styles for mobile */
+}

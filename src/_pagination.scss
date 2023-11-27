@@ -1,0 +1,21 @@
+.pagination {
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pagination__info {
+  padding: 2px 8px;
+  // border: 1px solid #FFF;
+  border: none;
+  background-color: #333;
+  white-space: nowrap;
+}
+
+.pagination__input-per-page {
+  padding: 4px 0px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
